@@ -118,16 +118,16 @@
     <section class="grid grid-cols-2">
         <div class="">
             <img src="images-main/PhotoPortafolio.jpeg" alt="Emily Rivas"
-                class="w-full h-full object-cover object-center">
+                class="w-full object-cover object-center">
         </div>
 
         <div class="bg-[#9A93D3] text-white px-7 py-6 md:px-7 md:py-6 flex flex-col justify-start">
-            <p class="text-[8px] md:text-[9px] leading-none mb-3">Hi!, I'm Emily Rivas</p>
-            <h2 class="text-[15px] md:text-[17px] leading-[1.25] font-normal mb-3">
+            <p class="text-[18px] md:text-[19px] leading-none mb-3">Hi!, I'm Emily Rivas</p>
+            <h2 class="text-[25px] md:text-[27px] leading-[1.25] font-normal mb-3">
                 I'M VERY PASSIONATE ABOUT WORKING IN PROJECTS
                 THAT CAN TRANSFORM PEOPLES LIFE</h2>
 
-            <div class="text-[7px] md:text-[8px] leading-[1.35] max-w-[430px]">
+            <div class="text-[18px] md:text-[19px] leading-[1.35]">
                 <p>
                     I consider myself a creative, curious, and purpose-driven person. I enjoy using technology and design
                     to
@@ -152,29 +152,105 @@
         </div>
     </section>
 
-    <section>
-        <h3>I'M INTERESTED ABOUT YOUR PROJECTS</h3> <br>
-        <h3>LET'S TALK!</h3>
+    <footer id="contact" class="bg-[#343D5E] text-white px-6 py-8 md:px-10">
 
-        <div>
-            <p>First Name</p>
-            <label for="name"></label>
-            <input type="text" id="name" name="name">
+    <!-- Título -->
+    <div class="text-center mb-5">
+        <h3 class="text-lg md:text-xl font-bold leading-tight">
+            I'M INTERESTED ABOUT YOUR PROJECT
+        </h3>
 
-            <p>Email Address</p>
-            <label for="email"></label>
-            <input type="text" id="email" name="email">
+        <h3 class="text-lg md:text-xl font-bold leading-tight">
+            LET'S TALK!
+        </h3>
+    </div>
 
-            <p>What are you looking for in your project?</p>
-            <label for="project"></label>
-            <textarea id="project" name="project" rows="5" cols="20"></textarea>
 
-            <button type="submit">LET'S GET STARTED</button>
+    <!-- Formulario -->
+    <form class="w-full max-w-[225px] mx-auto border border-white rounded-md p-2.5">
+
+        <!-- Nombre -->
+        <div class="mb-3">
+            <label for="name" class="block text-[9px] mb-1">
+                First Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full h-3 bg-[#69749D] rounded-sm outline-none px-2 text-[9px]"
+            >
         </div>
 
-        <P>Find me on</P>
-        <button>LinkedIn</button>
-    </section>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="email" class="block text-[9px] mb-1">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full h-3 bg-[#69749D] rounded-sm outline-none px-2 text-[9px]"
+            >
+        </div>
+
+
+        <!-- Proyecto -->
+        <div class="mb-3">
+            <label for="project" class="block text-[9px] mb-1">
+                What are you looking for in your project?
+            </label>
+
+            <textarea
+                id="project"
+                name="project"
+                rows="2"
+                class="w-full bg-[#69749D] rounded-sm outline-none px-2 py-1 text-[9px] resize-none"
+            ></textarea>
+        </div>
+
+
+        <!-- Botón -->
+        <button
+            type="submit"
+            class="w-full bg-[#8178CC] hover:bg-[#756BC0] text-white text-[8px] py-2 rounded-sm transition"
+        >
+            LET'S GET STARTED
+        </button>
+
+    </form>
+
+
+    <!-- LinkedIn -->
+    <div class="text-center mt-4">
+        <p class="text-[9px] mb-1">
+            Find me on
+        </p>
+
+        <a
+            href="#"
+            class="inline-block bg-[#8178CC] text-white text-[8px] px-2 py-1 rounded-sm"
+        >
+            LinkedIn
+        </a>
+    </div>
+
+
+    <!-- Email inferior -->
+    <div class="flex justify-end mt-8">
+        <a
+            href="mailto:emilyrivasalinas2008@gmail.com"
+            class="text-[8px] hover:underline"
+        >
+            ✉ emilyrivasalinas2008@gmail.com
+        </a>
+    </div>
+
+</footer>
 
 </body>
 
