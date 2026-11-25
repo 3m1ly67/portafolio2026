@@ -11,8 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style>
-        /* GENERAL */
-
         html {
             scroll-behavior: smooth;
         }
@@ -27,8 +25,6 @@
             min-height: 100vh;
             position: relative;
         }
-
-        /* STAR BACKGROUND */
 
         body::before {
             content: "";
@@ -57,8 +53,6 @@
             animation: starsFloat 70s linear infinite;
         }
 
-        /* STAR MOVEMENT */
-
         @keyframes starsFloat {
             from {
                 transform: translateY(0);
@@ -68,8 +62,6 @@
                 transform: translateY(-80px);
             }
         }
-
-        /* BOOK SPREAD */
 
         .book-spread {
             display: grid;
@@ -93,8 +85,6 @@
             z-index: 1;
         }
 
-        /* BOOK PAGES */
-
         .book-page {
             padding: 45px;
             min-height: 560px;
@@ -113,8 +103,6 @@
             border-right: 1px solid #DCE5F0;
         }
 
-        /* ILLUSTRATIONS */
-
         .artwork {
             width: 100%;
             height: 390px;
@@ -127,8 +115,6 @@
         .artwork:hover {
             transform: scale(1.04);
         }
-
-        /* MOBILE */
 
         @media (max-width: 768px) {
 
@@ -153,8 +139,6 @@
 
         }
 
-        /* REDUCED MOTION */
-
         @media (prefers-reduced-motion: reduce) {
 
             body::before {
@@ -167,42 +151,27 @@
 
         }
     </style>
-
 </head>
 
 
 <body class="font-['Kdam_Thmor_Pro'] text-white">
 
-
-    <!-- NAVIGATION -->
-
     <nav class="flex items-center justify-between px-8 py-6">
-
-        <!-- BACK BUTTON -->
-        <a href="index.html"
-            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm transition duration-300">
+        <a href="index.html" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm transition duration-300">
             BACK
         </a>
 
-        <!-- RIGHT NAVIGATION -->
         <div class="flex items-center gap-6">
-            <a href="index.html#about"
-                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm">ABOUT</a>
-
+            <a href="index.html#about" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm">ABOUT</a>
             <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm">CONTACT</a>
-
             <a href="index.html" class="bg-purple-500 text-white px-4 py-1 text-xs rounded-sm">Emily Rivas</a>
         </div>
-
     </nav>
 
 
     <main>
 
-        <!-- BOOK INTRODUCTION -->
-
         <section class="px-8 py-24 text-center relative z-10">
-
             <p class="text-xs tracking-[4px] text-[#C7D8EB] mb-5">
                 A SMALL COLLECTION OF MY LIFE'S PASSION
             </p>
@@ -216,22 +185,15 @@
             </p>
 
             <div class="w-16 h-1 bg-[#9AB9DF] rounded-full mx-auto mt-10"></div>
-
         </section>
 
 
-        <!-- BOOK CONTENT -->
-
         <section class="px-5 md:px-10 pb-20">
-
-            <!-- FIRST BOOK SPREAD -->
-
+            
+            <!-- PRIMER LIBRO  -->
             <div class="book-spread">
-
-                <!-- PAGE 01 -->
-
+                <!-- PAGINA 01 -->
                 <article class="book-page">
-
                     <span class="text-xs tracking-widest text-[#9A93D3] mb-5">
                         DRAWING Nº 01
                     </span>
@@ -239,7 +201,6 @@
                     <img src="imagenes-mypassion/dibujo 1.jpeg" alt="First illustration" class="artwork">
 
                     <div class="mt-6">
-
                         <h2 class="text-xl font-bold">
                             I need to sleep more
                         </h2>
@@ -247,16 +208,11 @@
                         <p class="text-xs text-gray-500 mt-2">
                             Made with Ibis Paint
                         </p>
-
                     </div>
-
                 </article>
 
-
-                <!-- PAGE 02 -->
-
+                <!-- PAGINA 02 -->
                 <article class="book-page">
-
                     <span class="text-xs tracking-widest text-[#9A93D3] mb-5">
                         DRAWING Nº 02
                     </span>
@@ -278,20 +234,14 @@
                     <span class="absolute bottom-4 right-6 text-xs text-[#9A93D3]">
                         01
                     </span>
-
                 </article>
-
             </div>
 
 
-            <!-- SECOND BOOK SPREAD -->
-
+            <!-- SEGUNDO LIBRO  -->
             <div class="book-spread">
-
-                <!-- PAGE 03 -->
-
+                <!-- PAGINA 03 -->
                 <article class="book-page">
-
                     <span class="text-xs tracking-widest text-[#9A93D3] mb-5">
                         DRAWING Nº 03
                     </span>
@@ -299,7 +249,6 @@
                     <img src="imagenes-mypassion/dibujo 3.jpeg" alt="Third illustration" class="artwork">
 
                     <div class="mt-6">
-
                         <h2 class="text-xl font-bold">
                             Among flowers
                         </h2>
@@ -307,16 +256,11 @@
                         <p class="text-xs text-gray-500 mt-2">
                             Made with Ibis Paint
                         </p>
-
                     </div>
-
                 </article>
 
-
-                <!-- PAGE 04 -->
-
+                <!-- PAGINA 04 -->
                 <article class="book-page">
-
                     <span class="text-xs tracking-widest text-[#9A93D3] mb-5">
                         DRAWING Nº 04
                     </span>
@@ -338,17 +282,14 @@
                     <span class="absolute bottom-4 right-6 text-xs text-[#9A93D3]">
                         02
                     </span>
-
                 </article>
-
             </div>
 
+
+            <!-- TERCER LIBRO  -->
             <div class="book-spread">
-
-                <!-- PAGE 03 -->
-
+                <!-- PAGINA 05 -->
                 <article class="book-page">
-
                     <span class="text-xs tracking-widest text-[#9A93D3] mb-5">
                         DRAWING Nº 05
                     </span>
@@ -356,7 +297,6 @@
                     <img src="imagenes-mypassion/dibujo 5.jpeg" alt="Third illustration" class="artwork">
 
                     <div class="mt-6">
-
                         <h2 class="text-xl font-bold">
                             Medieval work
                         </h2>
@@ -364,16 +304,11 @@
                         <p class="text-xs text-gray-500 mt-2">
                             Traditional drawing
                         </p>
-
                     </div>
-
                 </article>
 
-
-                <!-- PAGE 04 -->
-
+                <!-- PAGINA 06 -->
                 <article class="book-page">
-
                     <span class="text-xs tracking-widest text-[#9A93D3] mb-5">
                         DRAWING Nº 06
                     </span>
@@ -381,7 +316,6 @@
                     <img src="imagenes-mypassion/dibujo 6.jpeg" alt="Fourth illustration" class="artwork">
 
                     <div class="mt-6">
-
                         <h2 class="text-xl font-bold">
                             With lots of love
                         </h2>
@@ -389,23 +323,19 @@
                         <p class="text-xs text-gray-500 mt-2">
                             Made with Ibis Paint
                         </p>
-
                     </div>
 
                     <span class="absolute bottom-4 right-6 text-xs text-[#9A93D3]">
                         03
                     </span>
-
                 </article>
-
             </div>
 
+
+            <!-- CUARTO LIBRO  -->
             <div class="book-spread">
-
-                <!-- PAGE 03 -->
-
+                <!-- PAGINA 07 -->
                 <article class="book-page">
-
                     <span class="text-xs tracking-widest text-[#9A93D3] mb-5">
                         DRAWING Nº 07
                     </span>
@@ -413,7 +343,6 @@
                     <img src="imagenes-mypassion/dibujo 7.jpeg" alt="Third illustration" class="artwork">
 
                     <div class="mt-6">
-
                         <h2 class="text-xl font-bold">
                             I know you know
                         </h2>
@@ -421,16 +350,11 @@
                         <p class="text-xs text-gray-500 mt-2">
                             Made with Ibis Paint
                         </p>
-
                     </div>
-
                 </article>
 
-
-                <!-- PAGE 04 -->
-
+                <!-- PAGINA 08 -->
                 <article class="book-page">
-
                     <span class="text-xs tracking-widest text-[#9A93D3] mb-5">
                         DRAWING Nº 08
                     </span>
@@ -438,7 +362,6 @@
                     <img src="imagenes-mypassion/dibujo 8.jpeg" alt="Fourth illustration" class="artwork">
 
                     <div class="mt-6">
-
                         <h2 class="text-xl font-bold">
                             Diseña tu meta
                         </h2>
@@ -446,24 +369,18 @@
                         <p class="text-xs text-gray-500 mt-2">
                             Made with Ibis Paint
                         </p>
-
                     </div>
 
                     <span class="absolute bottom-4 right-6 text-xs text-[#9A93D3]">
                         04
                     </span>
-
                 </article>
-
             </div>
 
         </section>
 
 
-        <!-- CLOSING -->
-
         <section class="text-center px-8 py-20 bg-[#343D5E] text-white">
-
             <p class="text-xs tracking-[4px] text-[#C5B8E8] mb-5">
                 THANK YOU FOR LOOKING
             </p>
@@ -476,13 +393,10 @@
                 class="inline-block mt-10 bg-[#8178CC] hover:bg-[#9489DD] px-7 py-3 rounded-md text-sm transition duration-300">
                 BACK TO PORTFOLIO
             </a>
-
         </section>
 
     </main>
 
-
-    <!-- FOOTER -->
 
     <footer class="bg-[#343D5E] text-white border-t border-white/20 px-8 py-6 text-center">
 
@@ -491,7 +405,6 @@
         </p>
 
     </footer>
-
 
 </body>
 
