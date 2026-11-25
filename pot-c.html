@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Bud</title>
+    <title>POT-C</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <style>
-        /* Animación de aparición al hacer scroll */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(45px);
@@ -22,7 +22,6 @@
             transform: translateY(0);
         }
 
-        /* Respeta las preferencias de movimiento del usuario */
         @media (prefers-reduced-motion: reduce) {
             .scroll-reveal {
                 opacity: 1;
@@ -31,7 +30,6 @@
             }
         }
 
-        /* HERO TEXT ANIMATION */
         .hero-text {
             animation: fadeUp 1s ease forwards;
         }
@@ -48,7 +46,6 @@
             }
         }
 
-        /* FLOATING MONSTERA */
         .monstera-animation {
             animation: floatPlant 5s ease-in-out infinite;
         }
@@ -65,7 +62,6 @@
             }
         }
 
-        /* REDUCED MOTION */
         @media (prefers-reduced-motion: reduce) {
 
             .hero-text,
@@ -74,14 +70,10 @@
             }
         }
 
-        /* GALLERY CONTAINER */
-
         .gallery-container {
             width: 100%;
             overflow: hidden;
         }
-
-        /* SLIDER TRACK */
 
         .gallery-track {
             display: flex;
@@ -89,15 +81,11 @@
             animation: infiniteScroll 35s linear infinite;
         }
 
-        /* IMAGE GROUP */
-
         .gallery-group {
             display: flex;
             gap: 20px;
             padding-right: 20px;
         }
-
-        /* GALLERY IMAGES */
 
         .gallery-group img {
             width: 300px;
@@ -108,13 +96,9 @@
             transition: transform 0.4s ease;
         }
 
-        /* HOVER EFFECT */
-
         .gallery-group img:hover {
             transform: scale(1.04);
         }
-
-        /* INFINITE ANIMATION */
 
         @keyframes infiniteScroll {
             from {
@@ -126,13 +110,9 @@
             }
         }
 
-        /* PAUSE WHEN HOVERING */
-
         .gallery-container:hover .gallery-track {
             animation-play-state: paused;
         }
-
-        /* RESPONSIVE */
 
         @media (max-width: 768px) {
 
@@ -142,8 +122,6 @@
             }
 
         }
-
-        /* ACCESSIBILITY */
 
         @media (prefers-reduced-motion: reduce) {
             .gallery-track {
@@ -157,41 +135,30 @@
     </style>
 </head>
 
+
 <body class="font-['Kdam_Thmor_Pro'] bg-[#000000]">
 
     <nav class="flex items-center justify-between px-8 py-6">
-
-        <!-- BACK BUTTON -->
         <a href="index.html"
             class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm transition duration-300">
             BACK
         </a>
 
-        <!-- RIGHT NAVIGATION -->
         <div class="flex items-center gap-6">
             <a href="index.html#about"
                 class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm">ABOUT</a>
-
             <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm">CONTACT</a>
-
             <a href="index.html" class="bg-purple-500 text-white px-4 py-1 text-xs rounded-sm">Emily Rivas</a>
         </div>
-
     </nav>
 
     <main>
-
         <section class="relative overflow-hidden min-h-[750px] bg-[#221E1E] px-8 md:px-16 py-20 flex items-center">
 
-            <!-- DECORATIVE CIRCLE -->
             <div class="absolute w-[500px] h-[500px] rounded-full   right-[-100px] top-20"></div>
 
-            <!-- MAIN CONTENT -->
             <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center w-full max-w-7xl mx-auto gap-10">
-
-                <!-- LEFT: TEXT -->
                 <div class="flex flex-col items-start hero-text">
-
                     <span class="bg-[#2C5745] text-white px-3 py-2 text-xs tracking-widest">
                         POT-C — 2025
                     </span>
@@ -205,28 +172,20 @@
                         Saving the world was never this easy. POT-C is an smart bin that transforms organic waste into
                         compost, helping to reduce pollution and promote sustainability.
                     </p>
-
                 </div>
 
-
-                <!-- RIGHT: MONSTERA -->
                 <div class="relative flex justify-center items-center min-h-[420px]">
-
-                    <!-- BACKGROUND CIRCLE -->
                     <div
                         class="absolute w-[320px] h-[320px] md:w-[440px] md:h-[440px] rounded-full bg-[#ebe3a7] opacity-50">
                     </div>
 
-                    <!-- SMALL DECORATIVE TEXT -->
                     <span class="absolute top-5 right-5 md:right-10 text-xs tracking-widest text-[#FFFFFF]">
                         MADE BY STUDENTS
                     </span>
 
-                    <!-- MONSTERA IMAGE -->
                     <img src="images-POTC/Contenedor de basura beige minimalista.png" alt="Monstera plant"
                         class="relative z-10 w-full max-w-[420px] object-contain monstera-animation drop-shadow-xl">
 
-                    <!-- FLOATING LABEL -->
                     <div
                         class="absolute bottom-10 left-0 md:left-5 z-20 bg-white/90 backdrop-blur-sm px-5 py-4 shadow-sm">
                         <p class="text-xs text-green-950 tracking-widest">
@@ -237,28 +196,22 @@
                         </p>
                     </div>
 
-                    <!-- DECORATIVE NUMBER -->
                     <span class="absolute bottom-0 left-100 text-6xl font-bold text-[#FFFFFF]/10">
                         ¡SUPÉRATE!
                     </span>
-
                 </div>
-
             </div>
 
         </section>
-
     </main>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 px-8 py-24 items-center">
 
-        <!-- IMAGE LEFT -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 px-8 py-24 items-center">
         <div class="flex justify-center md:justify-end items-center">
             <img src="images-POTC/Laptop con página web ecológica.png" alt="Plant Bud website displayed on a laptop"
                 class="w-full max-w-2xl object-contain">
         </div>
 
-        <!-- TEXT RIGHT -->
         <div class="scroll-reveal flex flex-col justify-center md:pl-2">
             <span class="bg-blue-900 text-white px-3 py-2 text-xs w-fit">
                 WEB DEVELOPMENT
@@ -269,15 +222,11 @@
                 making it intuitive for users.
             </p>
         </div>
-
     </section>
 
     <hr class="mx-8 border-gray-300">
 
-
     <section class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 px-8 py-16 items-center">
-
-        <!-- PHONE VIEW - LEFT -->
         <div class="scroll-reveal flex flex-col justify-center md:items-end text-left md:text-right">
             <span class="bg-green-950 text-white px-2 py-1 text-xs w-fit">
                 PHONE VIEW
@@ -289,13 +238,11 @@
             </p>
         </div>
 
-        <!-- PHONE - CENTER -->
         <div class="flex justify-center items-center">
             <img src="images-POTC/Panel de compostaje inteligente.png" alt="POT-C mobile application"
                 class="w-full max-w-[300px] md:max-w-[380px] object-contain">
         </div>
 
-        <!-- BRANDING - RIGHT -->
         <div class="scroll-reveal flex flex-col justify-center items-start text-left">
             <span class="bg-blue-500 text-white px-2 py-1 text-xs">
                 BRANDING
@@ -306,17 +253,13 @@
                 and easy to apply in the web app.
             </p>
         </div>
-
     </section>
 
     <hr class="mx-8 border-gray-300">
 
-
     <section class="px-8 py-16 pb-60">
-
         <div class="text-center">
             <h2 class="text-xl font-bold text-[#F8E9D3]"> ORIGINAL CONCEPTS </h2>
-
             <p class="text-[18px] mt-4 max-w-md mx-auto text-sm leading-relaxed text-white/80">
                 <strong class="text-[#7A9B30]">Logo design:</strong>
                 I helped to design a logo and a color palette
@@ -325,14 +268,10 @@
         </div>
 
         <div class="flex flex-wrap justify-center items-center gap-8 mt-10">
-
             <img src="images-POTC/LOGOPOTC.png" alt="Plant Bud logo variation" class="w-40">
-
         </div>
 
-
         <div class="flex flex-wrap justify-center gap-2 mt-8">
-
             <div class="bg-[#353A12] text-white px-3 py-2 text-xs font-bold">
                 #353A12
             </div>
@@ -352,18 +291,11 @@
             <div class="bg-[#7A9B30] text-white px-3 py-2 text-xs font-bold">
                 #7A9B30
             </div>
-
         </div>
-
     </section>
 
-    <!-- PROJECT PROCESS GALLERY -->
-
     <section class="bg-[#F8F8F3] py-24 overflow-hidden">
-
-        <!-- SECTION HEADER -->
         <div class="px-8 md:px-16 mb-12">
-
             <span class="bg-[#353A12] text-white px-3 py-2 text-xs tracking-widest">
                 THE PROCESS
             </span>
@@ -376,18 +308,11 @@
                 A little glimpse into the creative process behind POT-C.
                 From the first ideas to the final result.
             </p>
-
         </div>
 
-
-        <!-- INFINITE IMAGE SLIDER -->
         <div class="gallery-container">
-
             <div class="gallery-track">
-
-                <!-- FIRST SET OF IMAGES -->
                 <div class="gallery-group">
-
                     <img src="images-POTC/Compost Klani.jpeg" alt="PlantBudAntiguoLogo">
                     <img src="images-POTC/POTC DESING PROJECT.jpeg" alt="Paletas de colores">
                     <img src="images-POTC/POTC TURQUESA.jpeg" alt="PlantBudBlancoNegroViejo">
@@ -395,14 +320,9 @@
                     <img src="images-POTC/POTC COLOR PALLET (NOT FINAL).jpeg" alt="PBPresentation">
                     <img src="images-POTC/POTC PHNOE VIEW.jpeg" alt="GardenPB">
                     <img src="images-POTC/POTC PRINTED.jpeg" alt="Doodles PB">
-
                 </div>
 
-
-
-                <!-- DUPLICATED SET FOR INFINITE LOOP -->
                 <div class="gallery-group" aria-hidden="true">
-
                     <img src="images-POTC/Compost Klani.jpeg" alt="PlantBudAntiguoLogo">
                     <img src="images-POTC/POTC DESING PROJECT.jpeg" alt="Paletas de colores">
                     <img src="images-POTC/POTC TURQUESA.jpeg" alt="PlantBudBlancoNegroViejo">
@@ -410,34 +330,20 @@
                     <img src="images-POTC/POTC COLOR PALLET (NOT FINAL).jpeg" alt="PBPresentation">
                     <img src="images-POTC/POTC PHNOE VIEW.jpeg" alt="GardenPB">
                     <img src="images-POTC/POTC PRINTED.jpeg" alt="Doodles PB">
-
                 </div>
-
             </div>
-
         </div>
 
-
-        <!-- BOTTOM TEXT -->
         <div class="flex justify-between items-center px-8 md:px-16 mt-8">
-
             <p class="text-xs tracking-widest text-[#353A12]">
                 POT-C — PROJECT GALLERY
             </p>
-
-            <p class="text-xs text-gray-500">
-                A JOURNEY OF CREATIVITY & GROWTH
-            </p>
-
         </div>
-
     </section>
 
     <footer id="contact" class="bg-[#343D5E] text-white px-8 py-16 md:px-16 md:py-20">
 
-        <!-- HEADER -->
         <div class="text-center mb-12">
-
             <p class="text-sm md:text-base tracking-[3px] text-[#C5B8E8] mb-4">
                 LET'S WORK TOGETHER
             </p>
@@ -453,55 +359,37 @@
             <p class="text-sm md:text-base text-gray-300 mt-5">
                 I'm always open to new ideas, collaborations and opportunities.
             </p>
-
         </div>
 
-
-        <!-- MAIN CONTENT -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
 
-            <!-- CONTACT FORM -->
             <div class="border border-white/60 rounded-xl p-6 md:p-8">
-
                 <h3 class="text-xl md:text-2xl font-bold mb-6">
                     Let's get in touch.
                 </h3>
 
                 <form>
-
                     <div class="mb-5">
-
                         <label for="name" class="block text-sm mb-2">
                             First Name
                         </label>
 
-                        <input type="text" id="name" name="name" placeholder="Your name" required
-                            class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#B9A7E5]">
-
+                        <input type="text" id="name" name="name" placeholder="Your name" required class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#B9A7E5]">
                     </div>
 
-
                     <div class="mb-5">
-
                         <label for="email" class="block text-sm mb-2">
                             Email Address
                         </label>
 
-                        <input type="email" id="email" name="email" placeholder="Your email" required
-                            class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#B9A7E5]">
-
+                        <input type="email" id="email" name="email" placeholder="Your email" required class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#B9A7E5]">
                     </div>
 
-
                     <div class="mb-6">
-
                         <label for="project" class="block text-sm mb-2">
                             Tell me about your project
                         </label>
-
-                        <textarea id="project" name="project" rows="4" placeholder="Write your message..." required
-                            class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none resize-none focus:ring-2 focus:ring-[#B9A7E5]"></textarea>
-
+                        <textarea id="project" name="project" rows="4" placeholder="Write your message..." required class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none resize-none focus:ring-2 focus:ring-[#B9A7E5]"></textarea>
                     </div>
 
 
@@ -509,31 +397,23 @@
                         class="w-full bg-[#8178CC] hover:bg-[#9489DD] text-white text-sm md:text-base font-bold py-4 rounded-md transition duration-300">
                         LET'S GET STARTED
                     </button>
-
                 </form>
-
             </div>
 
-
-            <!-- SOCIAL MEDIA AND EMAIL -->
             <div class="flex flex-col justify-center gap-10 md:pl-8">
-
                 <div>
-
                     <p class="text-sm text-[#C5B8E8] tracking-widest mb-3">
                         FIND ME ON
                     </p>
 
                     <a href="#"
                         class="inline-block bg-[#8178CC] hover:bg-[#9489DD] px-6 py-3 rounded-md text-base transition duration-300">
-                        LinkedIn ↗
+                        LinkedIn
                     </a>
-
                 </div>
 
 
                 <div>
-
                     <p class="text-sm text-[#C5B8E8] tracking-widest mb-3">
                         HAVE A QUESTION?
                     </p>
@@ -542,18 +422,15 @@
                         class="text-lg md:text-xl hover:text-[#C5B8E8] transition duration-300 break-all">
                         es.rivasalinas2008@gmail.com
                     </a>
-
                 </div>
 
 
                 <div>
-
                     <p class="text-2xl md:text-3xl font-bold text-[#B9A7E5]">
                         Let's create something meaningful.
                     </p>
 
                 </div>
-
             </div>
 
         </div>
