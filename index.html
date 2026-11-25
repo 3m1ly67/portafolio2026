@@ -9,6 +9,112 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+
+    /* GLITCH EFFECT */
+
+    .glitch-text {
+        position: relative;
+        animation: glitch 1.8s infinite;
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+        content: attr(data-text);
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        padding: inherit;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .glitch-text::before {
+        color: #948ecf;
+        clip-path: inset(0 0 50% 0);
+        transform: translateX(-3px);
+        opacity: 0.8;
+        animation: glitch-top 1.8s infinite;
+    }
+
+    .glitch-text::after {
+        color: #8178CC;
+        clip-path: inset(50% 0 0 0);
+        transform: translateX(3px);
+        opacity: 0.8;
+        animation: glitch-bottom 1.8s infinite;
+    }
+
+    @keyframes glitch {
+
+        0%, 90%, 100% {
+            transform: translate(0);
+        }
+
+        92% {
+            transform: translate(-2px, 1px);
+        }
+
+        94% {
+            transform: translate(2px, -1px);
+        }
+
+        96% {
+            transform: translate(-1px, 0);
+        }
+
+    }
+
+    @keyframes glitch-top {
+
+        0%, 90%, 100% {
+            transform: translateX(0);
+        }
+
+        92% {
+            transform: translateX(-5px);
+        }
+
+        94% {
+            transform: translateX(3px);
+        }
+
+    }
+
+    @keyframes glitch-bottom {
+
+        0%, 90%, 100% {
+            transform: translateX(0);
+        }
+
+        92% {
+            transform: translateX(5px);
+        }
+
+        94% {
+            transform: translateX(-3px);
+        }
+
+    }
+
+    /* REDUCED MOTION */
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .glitch-text,
+        .glitch-text::before,
+        .glitch-text::after {
+            animation: none;
+        }
+
+    }
+
+html {
+    scroll-behavior: smooth;
+}
+
+</style>
 </head>
 
 <body class="font-['Kdam_Thmor_Pro']">
@@ -16,7 +122,7 @@
     <nav class="flex items-center justify-between px-8 py-6">
 
         <div>
-
+            <!-- LOGO -->
         </div>
 
         <div class="flex items-center gap-6">
@@ -29,78 +135,178 @@
     </nav>
 
 
-    <section class="grid grid-cols-2 gap-8 px-8 py-16">
+    <section class="min-h-[70vh] px-6 md:px-16 py-20 flex flex-col justify-center items-center text-center overflow-hidden">
 
-        <div>
-            <h1 class="text-4xl font-bold"> STUDENT WITH <br> EXPERIENCE IN </h1>
-            <p class="mt-4 text-sm"> TAKE A SMALL LOOK...</p>
-        </div>
+    <!-- SMALL INTRO -->
+    
 
-        <div class="flex items-center">
-            <span class="bg-blue-900 text-white px-4 py-2 text-2xl font-bold"> WEB DESIGN </span>
-        </div>
+    <!-- MAIN TITLE -->
+    <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-[9rem] font-bold leading-[0.95] tracking-tight text-[#343D5E]">
+        STUDENT WITH
+        <span class="block mt-3 text-[#9A93D3]">
+            EXPERIENCE IN
+        </span>
+    </h1>
 
-    </section>
+    <!-- ANIMATED WORD -->
+    <div class="mt-10 md:mt-14 min-h-[90px] md:min-h-[130px] flex items-center justify-center">
 
+        <span id="glitch-text"
+              class="glitch-text inline-block bg-[#343D5E] text-white px-5 py-3 md:px-10 md:py-5 text-3xl md:text-5xl lg:text-6xl font-bold tracking-wide"
+              data-text="WEB DESIGN">
+            WEB DESIGN
+        </span>
+
+    </div>
+
+    <!-- DECORATIVE LINE -->
+    <div class="mt-8 mb-12 w-20 h-1 bg-[#9A93D3] rounded-full"></div>
+    
+<p class="text-sm md:text-base tracking-[0.25em] text-gray-500 mb-8">
+        TAKE A SMALL LOOK...
+    </p>
+</section>
+
+
+
+
+    <!-- PROYECTOS -->
     <section id="projects" class="px-8 py-16">
-        <h2 class="text-2xl font-bold mb-8"> PROJECTS </h2>
+
+        <h2 class="text-2xl font-bold mb-8">PROJECTS</h2>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            <a href="plant-bud.html">
-                <article class="bg-gray-100 rounded-xl overflow-hidden">
-                    <img src="images/home/plant-bud.png" alt="Plant Bud project" class="w-full">
+            <!-- PLANT BUD -->
+            <a href="plant-bud.html"
+                class="group block h-full rounded-xl transition-all duration-200 ease-out hover:-translate-y-1 active:scale-[0.97] active:translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-400">
 
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold"> PLANT BUD </h3>
-                        <p class="mt-3 text-sm">
+                <article
+                    class="bg-gray-100 rounded-xl overflow-hidden p-4 h-full flex flex-col transition-shadow duration-300 group-hover:shadow-xl">
+
+                    <!-- IMAGE -->
+                    <div class="w-full h-180 rounded-lg overflow-hidden
+            flex items-center justify-center p-2">
+
+                        <img src="images-main/PBPantalladeinicio.png" alt="Plant Bud project" class="h-auto w-auto object-contain
+                rounded-md transition-transform duration-300
+                group-hover:scale-105">
+                    </div>
+
+                    <!-- CONTENT -->
+                    <div class="p-2 pt-5 flex flex-col flex-1">
+
+                        <h3 class="text-xl font-bold">PLANT BUD</h3>
+
+                        <p class="mt-3 text-sm leading-relaxed">
                             Web app for plant care, connecting nurseries,
-                            gardeners and plant lovers all in one
+                            gardeners and plant lovers all in one.
                         </p>
 
-                        <div class="flex gap-2 mt-4">
-                            <span class="bg-blue-500 text-white px-2 py-1 text-xs rounded"> BRANDING </span>
-                            <span class="bg-purple-500 text-white px-2 py-1 text-xs rounded"> WEB DESIGN </span>
-                            <span class="bg-purple-500 text-white px-2 py-1 text-xs rounded"> WEB DEVELOPMENT </span>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-5">
+
+                            <span class="bg-blue-500 text-white px-2 py-1 text-xs rounded">
+                                BRANDING
+                            </span>
+
+                            <span class="bg-purple-500 text-white px-2 py-1 text-xs rounded">
+                                WEB DESIGN
+                            </span>
+
+                            <span class="bg-purple-500 text-white px-2 py-1 text-xs rounded">
+                                WEB DEVELOPMENT
+                            </span>
+
                         </div>
 
                     </div>
+
                 </article>
             </a>
 
-            <a href="pot-c.html">
-                <article class="bg-gray-100 rounded-xl overflow-hidden">
-                    <img src="images/home/plant-bud.png" alt="Plant Bud project" class="w-full">
 
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold"> POT-C </h3>
-                        <p class="mt-3 text-sm">
-                            An smart bin that transforms organic waste into compost.
-                            It's connect to an app were you can control the process
+            <!-- POT-C -->
+            <a href="pot-c.html"
+                class="group block h-full rounded-xl transition-all duration-200 ease-out hover:-translate-y-1 active:scale-[0.97] active:translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-400">
+
+                <article
+                    class="bg-gray-100 rounded-xl overflow-hidden p-4 h-full flex flex-col transition-shadow duration-300 group-hover:shadow-xl">
+
+                    <!-- IMAGE -->
+                    <div class="w-full h-180 rounded-lg overflow-hidden
+            flex items-center justify-center p-2">
+
+                        <img src="images-main/POTCPantalladeinicio.png" alt="POT-C project" class="h-auto w-auto object-contain
+                rounded-md transition-transform duration-300
+                group-hover:scale-105">
+                    </div>
+
+
+
+                    <!-- CONTENT -->
+                    <div class="p-2 pt-5 flex flex-col flex-1">
+
+                        <h3 class="text-xl font-bold">POT-C</h3>
+
+                        <p class="mt-3 text-sm leading-relaxed">
+                            A smart bin that transforms organic waste into compost.
+                            It's connected to an app where you can control the process.
                         </p>
 
-                        <div class="flex gap-2 mt-4">
-                            <span class="bg-blue-500 text-white px-2 py-1 text-xs rounded"> BRANDING </span>
-                            <span class="bg-purple-500 text-white px-2 py-1 text-xs rounded"> WEB DESIGN </span>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-5">
+
+                            <span class="bg-blue-500 text-white px-2 py-1 text-xs rounded">
+                                BRANDING
+                            </span>
+
+                            <span class="bg-purple-500 text-white px-2 py-1 text-xs rounded">
+                                WEB DESIGN
+                            </span>
+
                         </div>
 
                     </div>
+
                 </article>
             </a>
 
-            <a href="careconnect.html">
-                <article class="bg-gray-100 rounded-xl overflow-hidden">
-                    <img src="images/home/plant-bud.png" alt="Plant Bud project" class="w-full">
 
-                    <div class="p-5">
-                        <h3 class="text-xl font-bold"> CARE CONNECT </h3>
-                        <p class="mt-3 text-sm">
-                            App that helps to take care of older adult with chronic diseases,
-                            having contact with a private doctor
+            <!-- CARE CONNECT -->
+            <a href="careconnect.html"
+                class="group block h-full rounded-xl transition-all duration-200 ease-out hover:-translate-y-1 active:scale-[0.97] active:translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-400">
+
+                <article
+                    class="bg-gray-100 rounded-xl overflow-hidden p-4 h-full flex flex-col transition-shadow duration-300 group-hover:shadow-xl">
+
+                    <!-- IMAGE -->
+                    <div class="w-full h-180 rounded-lg overflow-hidden
+            flex items-center justify-center p-2">
+                        <img src="images-main/CareConnectPantalladeinicio.png" alt="Care Connect project" class="h-auto w-auto object-contain
+                rounded-md transition-transform duration-300
+                group-hover:scale-105">
+                    </div>
+
+
+                    <!-- CONTENT -->
+                    <div class="p-2 pt-5 flex flex-col flex-1">
+
+                        <h3 class="text-xl font-bold">CARE CONNECT</h3>
+
+                        <p class="mt-3 text-sm leading-relaxed">
+                            App that helps take care of older adults with chronic
+                            diseases, connecting them with a private doctor.
                         </p>
 
-                        <div class="flex gap-2 mt-4">
-                            <span class="bg-blue-500 text-white px-2 py-1 text-xs rounded"> BRANDING </span>
-                            <span class="bg-purple-500 text-white px-2 py-1 text-xs rounded"> WEB DESIGN </span>
+                        <div class="flex flex-wrap gap-2 mt-auto pt-5">
+
+                            <span class="bg-blue-500 text-white px-2 py-1 text-xs rounded">
+                                BRANDING
+                            </span>
+
+                            <span class="bg-purple-500 text-white px-2 py-1 text-xs rounded">
+                                WEB DESIGN
+                            </span>
+
                         </div>
 
                     </div>
@@ -109,131 +315,247 @@
             </a>
 
         </div>
+
     </section>
 
-    <section class="grid grid-cols-2">
-        <div class="">
-            <img src="images-main/PhotoPortafolio.jpeg" alt="Emily Rivas"
-                class="w-full object-cover object-center">
+
+
+
+
+    <!-- ABOUT ME SECTION -->
+
+    <section id="about" class="grid grid-cols-1 md:grid-cols-2 w-full items-stretch bg-[#EDE9F8]">
+
+        <!-- LEFT: PERSONAL PHOTO -->
+        <div class="w-full flex items-center">
+            <img src="images-main/PhotoPortafolio.jpeg" alt="Emily Rivas" class="block w-full h-auto object-contain">
         </div>
 
-        <div class="bg-[#9A93D3] text-white px-7 py-6 md:px-7 md:py-6 flex flex-col justify-start">
-            <p class="text-[18px] md:text-[19px] leading-none mb-3">Hi!, I'm Emily Rivas</p>
-            <h2 class="text-[25px] md:text-[27px] leading-[1.25] font-normal mb-3">
-                I'M VERY PASSIONATE ABOUT WORKING IN PROJECTS
-                THAT CAN TRANSFORM PEOPLES LIFE</h2>
 
-            <div class="text-[18px] md:text-[19px] leading-[1.35]">
+        <!-- RIGHT: ABOUT ME -->
+        <div class="bg-[#9A93D3] text-[#343D5E] px-8 py-14 md:px-10 lg:px-14 xl:px-16 flex flex-col justify-center">
+
+            <!-- INTRODUCTION -->
+            <p class="text-base md:text-lg mb-4">
+                Hi!, I'm Emily Rivas
+            </p>
+
+
+            <!-- MAIN TITLE -->
+            <h2 class="text-3xl md:text-[30px] lg:text-[32px] xl:text-[35px] leading-[1.2] font-bold mb-5">
+                I'M VERY PASSIONATE ABOUT
+                WORKING IN PROJECTS THAT
+                CAN TRANSFORM PEOPLE'S LIVES
+            </h2>
+
+
+            <!-- DESCRIPTION -->
+            <div class="text-base md:text-[16px] lg:text-[17px] leading-[1.6]">
+
                 <p>
-                    I consider myself a creative, curious, and purpose-driven person. I enjoy using technology and design
-                    to
-                    create solutions that can have a positive impact on people's lives. Through my projects, I have
-                    discovered that what motivates me most is not only creating something new, but creating something
-                    that
-                    is useful and meaningful.
+                    I consider myself a creative, curious, and purpose-driven
+                    person. I enjoy using technology and design to create
+                    solutions that can have a positive impact on people's lives.
                 </p>
 
-                <br>
-
-                <p>
-                    Many of my projects reflect this motivation. For example, with Care Connect, I worked on an idea
-                    focused
-                    on improving the care of older adults. Through Plant Bud, I combined my interest in technology,
-                    design,
-                    and nature to create a platform that could help people take better care of their plants. I have also
-                    worked on environmental projects such as POT-C, where I explored how innovation could contribute to
-                    addressing waste management.
+                <p class="mt-6">
+                    Through my projects, I have discovered that what
+                    motivates me most is not only creating something new,
+                    but creating something that is useful and meaningful.
                 </p>
+
             </div>
+
+
+            <!-- BUTTONS -->
+            <div class="flex flex-wrap items-center justify-between gap-5 mt-12">
+
+                <a href="mypassion.html"
+                    class="bg-[#8249AE] hover:bg-[#713C9B] text-white text-sm md:text-base px-8 py-3 rounded-xl transition duration-300 text-center min-w-[140px]">
+                    My passion
+                </a>
+
+                <a href="#contact"
+                    class="bg-[#343D5E] hover:bg-[#252D49] text-white text-sm md:text-base px-8 py-3 rounded-xl transition duration-300 text-center min-w-[140px]">
+                    Contact me
+                </a>
+
+            </div>
+
         </div>
+
     </section>
 
-    <footer id="contact" class="bg-[#343D5E] text-white px-6 py-8 md:px-10">
 
-    <div class="text-center mb-5">
-        <h3 class="text-lg md:text-xl font-bold leading-tight">
-            I'M INTERESTED ABOUT YOUR PROJECT
-        </h3>
+    <footer id="contact" class="bg-[#343D5E] text-white px-8 py-16 md:px-16 md:py-20">
 
-        <h3 class="text-lg md:text-xl font-bold leading-tight">
-            LET'S TALK!
-        </h3>
-    </div>
+        <!-- HEADER -->
+        <div class="text-center mb-12">
 
-    <form class="w-full max-w-[225px] mx-auto border border-white rounded-md p-2.5">
+            <p class="text-sm md:text-base tracking-[3px] text-[#C5B8E8] mb-4">
+                LET'S WORK TOGETHER
+            </p>
 
-        <div class="mb-3">
-            <label for="name" class="block text-[12px] mb-1">
-                First Name
-            </label>
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                HAVE A PROJECT IN MIND?
+            </h2>
 
-            <input
-                type="text"
-                id="name"
-                name="name"
-                class="w-full h-3 bg-[#69749D] rounded-sm outline-none px-2 text-[9px]"
-            >
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-[#B9A7E5] leading-tight">
+                LET'S TALK!
+            </h2>
+
+            <p class="text-sm md:text-base text-gray-300 mt-5">
+                I'm always open to new ideas, collaborations and opportunities.
+            </p>
+
         </div>
 
-        <div class="mb-3">
-            <label for="email" class="block text-[12px] mb-1">
-                Email Address
-            </label>
 
-            <input
-                type="email"
-                id="email"
-                name="email"
-                class="w-full h-3 bg-[#69749D] rounded-sm outline-none px-2 text-[9px]"
-            >
+        <!-- MAIN CONTENT -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+
+            <!-- CONTACT FORM -->
+            <div class="border border-white/60 rounded-xl p-6 md:p-8">
+
+                <h3 class="text-xl md:text-2xl font-bold mb-6">
+                    Let's get in touch.
+                </h3>
+
+                <form>
+
+                    <div class="mb-5">
+
+                        <label for="name" class="block text-sm mb-2">
+                            First Name
+                        </label>
+
+                        <input type="text" id="name" name="name" placeholder="Your name" required
+                            class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#B9A7E5]">
+
+                    </div>
+
+
+                    <div class="mb-5">
+
+                        <label for="email" class="block text-sm mb-2">
+                            Email Address
+                        </label>
+
+                        <input type="email" id="email" name="email" placeholder="Your email" required
+                            class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#B9A7E5]">
+
+                    </div>
+
+
+                    <div class="mb-6">
+
+                        <label for="project" class="block text-sm mb-2">
+                            Tell me about your project
+                        </label>
+
+                        <textarea id="project" name="project" rows="4" placeholder="Write your message..." required
+                            class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none resize-none focus:ring-2 focus:ring-[#B9A7E5]"></textarea>
+
+                    </div>
+
+
+                    <button type="submit"
+                        class="w-full bg-[#8178CC] hover:bg-[#9489DD] text-white text-sm md:text-base font-bold py-4 rounded-md transition duration-300">
+                        LET'S GET STARTED
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- SOCIAL MEDIA AND EMAIL -->
+            <div class="flex flex-col justify-center gap-10 md:pl-8">
+
+                <div>
+
+                    <p class="text-sm text-[#C5B8E8] tracking-widest mb-3">
+                        FIND ME ON
+                    </p>
+
+                    <a href="#"
+                        class="inline-block bg-[#8178CC] hover:bg-[#9489DD] px-6 py-3 rounded-md text-base transition duration-300">
+                        LinkedIn ↗
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <p class="text-sm text-[#C5B8E8] tracking-widest mb-3">
+                        HAVE A QUESTION?
+                    </p>
+
+                    <a href="mailto:es.rivasalinas2008@gmail.com"
+                        class="text-lg md:text-xl hover:text-[#C5B8E8] transition duration-300 break-all">
+                        es.rivasalinas2008@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <p class="text-2xl md:text-3xl font-bold text-[#B9A7E5]">
+                        Let's create something that can change a world.
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="mb-3">
-            <label for="project" class="block text-[12px] mb-1">
-                What are you looking for in your project?
-            </label>
 
-            <textarea
-                id="project"
-                name="project"
-                rows="2"
-                class="w-full bg-[#69749D] rounded-sm outline-none px-2 py-1 text-[9px] resize-none"
-            ></textarea>
+        <!-- BOTTOM FOOTER -->
+        <div class="border-t border-white/30 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+            <p class="text-sm text-gray-300">
+                © 2026 Emily Rivas. All rights reserved.
+            </p>
+
+            <a href="#" class="text-sm hover:text-[#C5B8E8] transition">
+                Back to top ↑
+            </a>
+
         </div>
 
-        <button
-            type="submit"
-            class="w-full bg-[#8178CC] hover:bg-[#756BC0] text-white text-[12px] py-2 rounded-sm transition"
-        >
-            LET'S GET STARTED
-        </button>
+    </footer>
 
-    </form>
+    <script>
 
-    <div class="text-center mt-4">
-        <p class="text-[12px] mb-1">
-            Find me on
-        </p>
+    const phrases = [
+        "WEB DESIGN",
+        "TEAM WORK",
+        "BRANDING",
+        "DIGITAL ART",
+        "LEADERSHIP",
+        "WEB DEVELOPMENT",
+        "CREATIVE THINKING"
+    ];
 
-        <a
-            href="#"
-            class="inline-block bg-[#8178CC] text-white text-[12px] px-2 py-1 rounded-sm"
-        >
-            LinkedIn
-        </a>
-    </div>
+    const glitchText = document.getElementById("glitch-text");
 
-    <div class="flex justify-end mt-8">
-        <a
-            href="mailto:emilyrivasalinas2008@gmail.com"
-            class="text-[12px] hover:underline"
-        >
-            emilyrivasalinas2008@gmail.com
-        </a>
-    </div>
+    let currentPhrase = 0;
 
-</footer>
+    setInterval(() => {
 
+        currentPhrase = (currentPhrase + 1) % phrases.length;
+
+        const newPhrase = phrases[currentPhrase];
+
+        glitchText.textContent = newPhrase;
+        glitchText.setAttribute("data-text", newPhrase);
+
+    }, 2500);
+
+</script>
 </body>
 
 </html>

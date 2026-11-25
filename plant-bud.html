@@ -6,106 +6,315 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Bud</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Animación de aparición al hacer scroll */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(45px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Respeta las preferencias de movimiento del usuario */
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* HERO TEXT ANIMATION */
+        .hero-text {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* FLOATING MONSTERA */
+        .monstera-animation {
+            animation: floatPlant 5s ease-in-out infinite;
+        }
+
+        @keyframes floatPlant {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(2deg);
+            }
+        }
+
+        /* REDUCED MOTION */
+        @media (prefers-reduced-motion: reduce) {
+
+            .hero-text,
+            .monstera-animation {
+                animation: none;
+            }
+        }
+
+        /* GALLERY CONTAINER */
+
+        .gallery-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* SLIDER TRACK */
+
+        .gallery-track {
+            display: flex;
+            width: max-content;
+            animation: infiniteScroll 35s linear infinite;
+        }
+
+        /* IMAGE GROUP */
+
+        .gallery-group {
+            display: flex;
+            gap: 20px;
+            padding-right: 20px;
+        }
+
+        /* GALLERY IMAGES */
+
+        .gallery-group img {
+            width: 300px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 4px;
+            flex-shrink: 0;
+            transition: transform 0.4s ease;
+        }
+
+        /* HOVER EFFECT */
+
+        .gallery-group img:hover {
+            transform: scale(1.04);
+        }
+
+        /* INFINITE ANIMATION */
+
+        @keyframes infiniteScroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* PAUSE WHEN HOVERING */
+
+        .gallery-container:hover .gallery-track {
+            animation-play-state: paused;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            .gallery-group img {
+                width: 230px;
+                height: 180px;
+            }
+
+        }
+
+        /* ACCESSIBILITY */
+
+        @media (prefers-reduced-motion: reduce) {
+            .gallery-track {
+                animation: none;
+            }
+
+            .gallery-container {
+                overflow-x: auto;
+            }
+        }
+    </style>
 </head>
 
 <body class="font-['Kdam_Thmor_Pro']">
 
     <nav class="flex items-center justify-between px-8 py-6">
 
-        <div>
-            <!-- LOGO -->
-        </div>
+        <!-- BACK BUTTON -->
+        <a href="index.html"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm transition duration-300">
+            BACK
+        </a>
 
+        <!-- RIGHT NAVIGATION -->
         <div class="flex items-center gap-6">
-            <a href="#projects" class="bg-blue-500 text-white px-4 py-1 text-xs rounded-sm">PROJECTS</a>
-            <a href="index.html#about" class="bg-blue-500 text-white px-4 py-1 text-xs rounded-sm">ABOUT</a>
-            <a href="#contact" class="bg-blue-500 text-white px-4 py-1 text-xs rounded-sm">CONTACT</a>
+            <a href="index.html#about"
+                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm">ABOUT</a>
+
+            <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 text-xs rounded-sm">CONTACT</a>
+
             <a href="index.html" class="bg-purple-500 text-white px-4 py-1 text-xs rounded-sm">Emily Rivas</a>
         </div>
 
     </nav>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 py-16">
+    <main>
 
-        <div class="flex flex-col justify-end">
-            <span class="bg-green-950 text-white px-2 py-1 text-xs w-fit"> PLANT BUD </span>
-            <p class="text-[18px] mt-4 max-w-lg text-sm leading-relaxed">
-                Plant Bud is a web app where plant lovers can have
-                many tools that helps them to take care of their gardens
-                or plants individually. Gardeners can offer their services
-                in an easier way, they can promote themselves in our
-                platform and get in touch with future clients. All in one.
-            </p>
-        </div>
+        <section class="relative overflow-hidden min-h-[750px] bg-[#F8F8F3] px-8 md:px-16 py-20 flex items-center">
 
+            <!-- DECORATIVE CIRCLE -->
+            <div class="absolute w-[500px] h-[500px] rounded-full bg-[#ebe3a7]/30 blur-3xl right-[-100px] top-20"></div>
 
-        <div class="flex items-center justify-center md:justify-end">
-            <h1 class="text-5xl md:text-7xl font-bold leading-none text-green-950">
-                PLANT<br>
-                BUD
-            </h1>
-        </div>
+            <!-- MAIN CONTENT -->
+            <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center w-full max-w-7xl mx-auto gap-10">
 
-    </section>
+                <!-- LEFT: TEXT -->
+                <div class="flex flex-col items-start hero-text">
+
+                    <span class="bg-green-950 text-white px-3 py-2 text-xs tracking-widest">
+                        PLANT BUD — 2026
+                    </span>
 
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 py-8 items-center">
-        <div>
-            <span class="bg-green-950 text-white px-2 py-1 text-xs"> LAPTOP VIEW </span>
+                    <h1 class="text-7xl md:text-8xl lg:text-9xl font-bold text-[#173D2A] leading-[0.9] mt-5">
+                        Plant
+                        <span class="block text-[#b8b841]">Bud.</span>
+                    </h1>
+
+                    <p class="mt-8 max-w-md text-sm md:text-base leading-8 text-[#555b50]">
+                        Growing together, one plant at a time.
+                        A digital space designed to connect plant
+                        lovers, simplify plant care and help gardens
+                        flourish.
+                    </p>
+
+                </div>
+
+
+                <!-- RIGHT: MONSTERA -->
+                <div class="relative flex justify-center items-center min-h-[420px]">
+
+                    <!-- BACKGROUND CIRCLE -->
+                    <div
+                        class="absolute w-[320px] h-[320px] md:w-[440px] md:h-[440px] rounded-full bg-[#ebe3a7] opacity-50">
+                    </div>
+
+                    <!-- SMALL DECORATIVE TEXT -->
+                    <span class="absolute top-5 right-5 md:right-10 text-xs tracking-widest text-green-950">
+                        MADE BY STUDENTS
+                    </span>
+
+                    <!-- MONSTERA IMAGE -->
+                    <img src="images-plantbud/monstera.png" alt="Monstera plant"
+                        class="relative z-10 w-full max-w-[420px] object-contain monstera-animation drop-shadow-xl">
+
+                    <!-- FLOATING LABEL -->
+                    <div
+                        class="absolute bottom-10 left-0 md:left-5 z-20 bg-white/90 backdrop-blur-sm px-5 py-4 shadow-sm">
+                        <p class="text-xs text-green-950 tracking-widest">
+                            LET IT GROW
+                        </p>
+                        <p class="text-[10px] text-gray-500 mt-1">
+                            A greener way to connect.
+                        </p>
+                    </div>
+
+                    <!-- DECORATIVE NUMBER -->
+                    <span class="absolute bottom-0 left-100 text-6xl font-bold text-[#173D2A]/10">
+                        ¡SUPÉRATE!
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-2 px-8 py-24 items-center">
+
+        <!-- IMAGE LEFT -->
+        <div class="flex justify-center md:justify-end items-center">
             <img src="images-plantbud/laptopPlantBud.png" alt="Plant Bud website displayed on a laptop"
-                class="mt-4 w-full max-w-xl">
+                class="w-full max-w-2xl object-contain">
         </div>
 
+        <!-- TEXT RIGHT -->
+        <div class="scroll-reveal flex flex-col justify-center md:pl-2">
+            <span class="bg-blue-900 text-white px-3 py-2 text-xs w-fit">
+                WEB DEVELOPMENT
+            </span>
 
-        <div>
-            <span class="bg-blue-900 text-white px-2 py-1 text-xs"> WEB DEVELOPMENT </span>
-            <p class="text-[18px] mt-4 max-w-md text-sm leading-relaxed">
+            <p class="mt-6 max-w-lg text-lg leading-relaxed">
                 I worked on the functionality of the web pages,
                 making it intuitive for users.
             </p>
         </div>
-    </section>
 
+    </section>
 
     <hr class="mx-8 border-gray-300">
 
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 py-10 items-center">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 px-8 py-16 items-center">
 
-        <div class="flex flex-col justify-center">
-            <div class="text-right">
-                <span class="bg-green-950 text-white px-2 py-1 text-xs"> PHONE VIEW </span>
+        <!-- PHONE VIEW - LEFT -->
+        <div class="scroll-reveal flex flex-col justify-center md:items-end text-left md:text-right">
+            <span class="bg-green-950 text-white px-2 py-1 text-xs w-fit">
+                PHONE VIEW
+            </span>
 
-                <p class="text-[18px] mt-4 max-w-md ml-auto text-sm leading-relaxed">
-                    Why an app? We created an app because we
-                    wanted our users to have an easy access to their
-                    camera, so they could use our plant scanner
-                    instantly.
-                </p>
-            </div>
-
-
-            <div class="mt-8">
-                <span class="bg-blue-500 text-white px-2 py-1 text-xs"> BRANDING </span>
-
-                <p class="text-[18px] mt-4 max-w-md text-sm leading-relaxed">
-                    I also worked on the color palette to be smart
-                    and easy to apply in the web app.
-                </p>
-            </div>
+            <p class="text-lg mt-4 max-w-sm leading-relaxed">
+                Why an app? We created an app because we
+                wanted our users to have an easy access to their
+                camera, so they could use our plant scanner
+                instantly.
+            </p>
         </div>
 
+        <!-- PHONE - CENTER -->
+        <div class="flex justify-center items-center">
+            <img src="images-plantbud/PhonePlantBud.png" alt="Plant Bud mobile application"
+                class="w-full max-w-[300px] md:max-w-[380px] object-contain">
+        </div>
 
-        <div class="flex justify-center md:justify-end">
-            <img src="images-plantbud/PhonePlantBud.png" alt="Plant Bud mobile application" class="w-full max-w-xs">
+        <!-- BRANDING - RIGHT -->
+        <div class="scroll-reveal flex flex-col justify-center items-start text-left">
+            <span class="bg-blue-500 text-white px-2 py-1 text-xs">
+                BRANDING
+            </span>
+
+            <p class="text-lg mt-4 max-w-sm leading-relaxed">
+                I also worked on the color palette to be smart
+                and easy to apply in the web app.
+            </p>
         </div>
 
     </section>
 
-<hr class="mx-8 border-gray-300">
+    <hr class="mx-8 border-gray-300">
 
 
     <section class="px-8 py-16 pb-60">
@@ -155,27 +364,242 @@
 
     </section>
 
+    <!-- PROJECT PROCESS GALLERY -->
 
-<footer class="bg-[#35405f] text-white px-8 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section class="bg-[#F8F8F3] py-24 overflow-hidden">
 
-        <div class="border-2 border-white rounded-xl p-4 max-w-md">
-            <label class="text-sm"> Email Address</label>
-            <input type="email"class="mt-3 w-full bg-[#5d6991] rounded px-3 py-2 outline-none">
-            <button class="mt-8 w-full bg-[#8174d1] py-4 rounded-sm text-sm"> LET'S GET STARTED </button>
+        <!-- SECTION HEADER -->
+        <div class="px-8 md:px-16 mb-12">
+
+            <span class="bg-green-950 text-white px-3 py-2 text-xs tracking-widest">
+                THE PROCESS
+            </span>
+
+            <h2 class="text-4xl md:text-6xl font-bold text-[#173D2A] mt-6">
+                Behind the scenes<span class="text-[#b8b841]">.</span>
+            </h2>
+
+            <p class="text-sm md:text-base text-gray-600 mt-4 max-w-lg leading-relaxed">
+                A little glimpse into the creative process behind Plant Bud.
+                From the first ideas to the final result.
+            </p>
+
         </div>
 
-        <div class="flex flex-col justify-between">
-            <div>
-                <p class="text-sm"> Find me on </p>
-                <a href="#" class="inline-block mt-2 bg-[#8174d1] px-3 py-1 text-sm"> LinkedIn </a>
+
+        <!-- INFINITE IMAGE SLIDER -->
+        <div class="gallery-container">
+
+            <div class="gallery-track">
+
+                <!-- FIRST SET OF IMAGES -->
+                <div class="gallery-group">
+
+                    <img src="images-plantbud/PlantBudAntiguoLogo.jpeg" alt="PlantBudAntiguoLogo">
+                    <img src="images-plantbud/Paletas de colores.jpeg" alt="Paletas de colores">
+                    <img src="images-plantbud/PlantBudBlancoNegroViejo.jpeg" alt="PlantBudBlancoNegroViejo">
+                    <img src="images-plantbud/PBPantalladeEjemplo.jpeg" alt="PBPantalladeEjemplo">
+                    <img src="images-plantbud/PBPresentation.jpeg" alt="PBPresentation">
+                    <img src="images-plantbud/GardenPB.jpeg" alt="GardenPB">
+                    <img src="images-plantbud/Doodles PB.jpeg" alt="Doodles PB">
+
+                </div>
+
+
+
+                <!-- DUPLICATED SET FOR INFINITE LOOP -->
+                <div class="gallery-group" aria-hidden="true">
+
+                    <img src="images-plantbud/PlantBudAntiguoLogo.jpeg" alt="PlantBudAntiguoLogo">
+                    <img src="images-plantbud/Paletas de colores.jpeg" alt="Paletas de colores">
+                    <img src="images-plantbud/PlantBudBlancoNegroViejo.jpeg" alt="PlantBudBlancoNegroViejo">
+                    <img src="images-plantbud/PBPantalladeEjemplo.jpeg" alt="PBPantalladeEjemplo">
+                    <img src="images-plantbud/PBPresentation.jpeg" alt="PBPresentation">
+                    <img src="images-plantbud/GardenPB.jpeg" alt="GardenPB">
+                    <img src="images-plantbud/Doodles PB.jpeg" alt="Doodles PB">
+
+                </div>
+
             </div>
 
-            <p class="text-sm"> es.rivassalinas2008@gmail.com </p>
         </div>
 
-    </div>
-</footer>
+
+        <!-- BOTTOM TEXT -->
+        <div class="flex justify-between items-center px-8 md:px-16 mt-8">
+
+            <p class="text-xs tracking-widest text-green-950">
+                PLANT BUD — PROJECT GALLERY
+            </p>
+
+            <p class="text-xs text-gray-500">
+                A JOURNEY OF CREATIVITY & GROWTH
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer id="contact" class="bg-[#343D5E] text-white px-8 py-16 md:px-16 md:py-20">
+
+        <!-- HEADER -->
+        <div class="text-center mb-12">
+
+            <p class="text-sm md:text-base tracking-[3px] text-[#C5B8E8] mb-4">
+                LET'S WORK TOGETHER
+            </p>
+
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                HAVE A PROJECT IN MIND?
+            </h2>
+
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-[#B9A7E5] leading-tight">
+                LET'S TALK!
+            </h2>
+
+            <p class="text-sm md:text-base text-gray-300 mt-5">
+                I'm always open to new ideas, collaborations and opportunities.
+            </p>
+
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+
+            <!-- CONTACT FORM -->
+            <div class="border border-white/60 rounded-xl p-6 md:p-8">
+
+                <h3 class="text-xl md:text-2xl font-bold mb-6">
+                    Let's get in touch.
+                </h3>
+
+                <form>
+
+                    <div class="mb-5">
+
+                        <label for="name" class="block text-sm mb-2">
+                            First Name
+                        </label>
+
+                        <input type="text" id="name" name="name" placeholder="Your name" required
+                            class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#B9A7E5]">
+
+                    </div>
+
+
+                    <div class="mb-5">
+
+                        <label for="email" class="block text-sm mb-2">
+                            Email Address
+                        </label>
+
+                        <input type="email" id="email" name="email" placeholder="Your email" required
+                            class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#B9A7E5]">
+
+                    </div>
+
+
+                    <div class="mb-6">
+
+                        <label for="project" class="block text-sm mb-2">
+                            Tell me about your project
+                        </label>
+
+                        <textarea id="project" name="project" rows="4" placeholder="Write your message..." required
+                            class="w-full bg-[#69749D] rounded-md px-4 py-3 text-sm outline-none resize-none focus:ring-2 focus:ring-[#B9A7E5]"></textarea>
+
+                    </div>
+
+
+                    <button type="submit"
+                        class="w-full bg-[#8178CC] hover:bg-[#9489DD] text-white text-sm md:text-base font-bold py-4 rounded-md transition duration-300">
+                        LET'S GET STARTED
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- SOCIAL MEDIA AND EMAIL -->
+            <div class="flex flex-col justify-center gap-10 md:pl-8">
+
+                <div>
+
+                    <p class="text-sm text-[#C5B8E8] tracking-widest mb-3">
+                        FIND ME ON
+                    </p>
+
+                    <a href="#"
+                        class="inline-block bg-[#8178CC] hover:bg-[#9489DD] px-6 py-3 rounded-md text-base transition duration-300">
+                        LinkedIn ↗
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <p class="text-sm text-[#C5B8E8] tracking-widest mb-3">
+                        HAVE A QUESTION?
+                    </p>
+
+                    <a href="mailto:es.rivasalinas2008@gmail.com"
+                        class="text-lg md:text-xl hover:text-[#C5B8E8] transition duration-300 break-all">
+                        es.rivasalinas2008@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <p class="text-2xl md:text-3xl font-bold text-[#B9A7E5]">
+                        Let's create something fantastic.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM FOOTER -->
+        <div class="border-t border-white/30 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+
+            <p class="text-sm text-gray-300">
+                © 2026 Emily Rivas. All rights reserved.
+            </p>
+
+            <a href="#" class="text-sm hover:text-[#C5B8E8] transition">
+                Back to top ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        revealElements.forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
 
 </body>
 
